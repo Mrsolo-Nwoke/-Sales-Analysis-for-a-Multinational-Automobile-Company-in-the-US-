@@ -109,6 +109,8 @@ import pandas as pd
 bikes_df = pd.read_csv("C:/Users/user/Downloads/bikes.csv")
 bikes_df.head() 
 ```
+<img width="866" height="213" alt="proj2 scv file" src="https://github.com/user-attachments/assets/ab8ccfd2-af6e-49e9-930a-f477c71804d8" />
+
 
 ### Data Inspection and Cleaning
 
@@ -121,6 +123,7 @@ bikes_df.head()
 
 bikes_df.isna().any()
 ```
+<img width="362" height="193" alt="proj2 checking for missing value" src="https://github.com/user-attachments/assets/0cf5292c-8dd3-4f3e-813b-25a92138b0d2" />
 
 ```python
 # counting the number of missing values 
@@ -128,12 +131,15 @@ bikes_df.isna().any()
 total_number_of_mising_values_by_column = bikes_df.isna().sum()
 total_number_of_mising_values_by_column
 ```
+<img width="286" height="193" alt="proj2 counting the number of missing values" src="https://github.com/user-attachments/assets/b0117ea0-7fd9-41af-a71d-8db7c724a677" />
+
 
 ```python
 # Total number of the datasets/datapoints
 
 len(bikes_df)
 ```
+<img width="309" height="101" alt="proj2 total number of data set" src="https://github.com/user-attachments/assets/17e03128-5147-4b65-8237-fed521b85606" />
 
 ```python
 # visualizing the total number of misssing values
@@ -148,6 +154,7 @@ total_number_of_mising_values_by_column.plot(kind = "bar")
 
 plt.show()
 ```
+<img width="505" height="398" alt="proj2 visualisation of missing values" src="https://github.com/user-attachments/assets/07d3ba41-97a4-4383-a53c-34668eebd8dd" />
 
 **2.Handling Missing values**:
   
@@ -158,6 +165,7 @@ plt.show()
 
 bikes_df["ProductColor"].mode()
 ```
+<img width="349" height="59" alt="proj2 handling missing value" src="https://github.com/user-attachments/assets/d8ed4870-b7ad-4392-b60d-bb3674fd0f29" />
 
 ```python
 # filling the missing value with the value "black"
@@ -166,12 +174,14 @@ bikes_df = bikes_df.fillna("Black")
 
 bikes_df
 ```
+<img width="848" height="436" alt="proj2 filling the missing value with the value black" src="https://github.com/user-attachments/assets/833bbefe-fe57-4fea-b46e-a25855fb5aca" />
 
 ```python
 # to verify that there are no more missing values on our dataset 
 
 bikes_df.isna().any()
 ```
+<img width="417" height="202" alt="proj2 no more missing value verification" src="https://github.com/user-attachments/assets/300e6a69-a726-4de1-ac85-a54c164d1897" />
 
 **3. Check for  Duplicates**:
 
@@ -180,6 +190,7 @@ bikes_df.isna().any()
 
 bikes_df.drop_duplicates(inplace = True)
 ```
+<img width="364" height="140" alt="proj2 checking for duplicates" src="https://github.com/user-attachments/assets/e0f92def-e01b-4598-a111-670989cb6be0" />
 
 **4. Handling Duplicates**:
 
@@ -192,6 +203,8 @@ len(bikes_df)
 
 # This shows that there was NO duplicates on our dataset
 ```
+<img width="446" height="146" alt="proj2 handling duplicates" src="https://github.com/user-attachments/assets/736f23ed-a7f9-4f8f-87a9-e0f52696f795" />
+
 
 ### Data Modification
 
@@ -222,6 +235,7 @@ bikes_df["Profit"] = bikes_df["SalesRevenue"]  - bikes_df["TotalCostPrice"]
 
 bikes_df.head()
 ```
+<img width="867" height="206" alt="proj2 data modification" src="https://github.com/user-attachments/assets/de1519bc-c516-4aac-ad53-4e3752804959" />
 
 ### Data Filtering
 
@@ -242,6 +256,7 @@ bikes_data_usa = bikes_df[(is_usa ) & (is_bikes)]
 
 bikes_data_usa
 ```
+<img width="878" height="386" alt="proj2 data filtering" src="https://github.com/user-attachments/assets/3160f4f7-a3f8-4deb-9fad-10254a4eba07" />
 
 ### Data Aggregation
 
@@ -252,6 +267,7 @@ bikes_data_usa
 total_profit_by_state_bike_usa = bikes_data_usa.groupby(["CustomerState", "CustomerCountry"])["Profit"].sum().reset_index()
 total_profit_by_state_bike_usa
 ```
+<img width="359" height="326" alt="proj2 data aggregation" src="https://github.com/user-attachments/assets/8e934184-ab8a-4fdc-9846-5a947e4b61bc" />
 
 ### Data Sorting/ Data Ranking
 ```python
